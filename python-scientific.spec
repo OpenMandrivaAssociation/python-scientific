@@ -1,6 +1,6 @@
 %define module	scientific
 %define name   	python-%{module}
-%define version 2.6
+%define version 2.6.1
 
 Summary: 	Various Python modules for scientific computing
 Name: 		%{name}
@@ -31,16 +31,16 @@ Group: 		Development/Python
 Requires: 	python-devel %{name} = %{version}
 
 %description devel
-This package contain some headers file from %{name} package.
+This package contain headers file associated with the %{name} package.
 
 %prep
 %setup -q -n ScientificPython-%{version}
 
 %build
-python setup.py build
+%__python setup.py build
 
 %install
-python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+%__python setup.py install --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 
 %clean
 rm -rf $RPM_BUILD_ROOT
