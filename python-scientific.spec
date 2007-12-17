@@ -9,7 +9,6 @@ Release: 	%mkrel 1
 Source: 	ScientificPython-%{version}.tar.bz2
 License: 	BSD-like
 Group: 		Development/Python
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	python-numeric
 BuildRequires: 	python python-devel
 BuildRequires: 	netcdf-devel python-numeric-devel
