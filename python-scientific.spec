@@ -5,7 +5,7 @@
 Summary: 	Various Python modules for scientific computing
 Name: 		%{name}
 Version: 	%{version}
-Release: 	%mkrel 1
+Release: 	%mkrel 3
 Source: 	ScientificPython-%{version}.tar.bz2
 License: 	BSD-like
 Group: 		Development/Python
