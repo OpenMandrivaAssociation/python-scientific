@@ -49,9 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README README.MPI README.BSPlib Doc/Reference Doc/BSP_Tutorial.pdf
 %{py_platsitedir}/Scientific/*
-%if "%py_ver" == "2.5"
 %{py_platsitedir}/*.egg-info
-%endif
 %defattr(755,root,root)
 %{_bindir}/*
 
