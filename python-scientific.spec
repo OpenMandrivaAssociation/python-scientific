@@ -8,6 +8,7 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{tarname}-%{version}.tar.lzma
+Patch0:		setup.py.patch
 License: 	CeCILL-C
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -39,6 +40,7 @@ This package contain headers file associated with the %{name} package.
 
 %prep
 %setup -q -n %{tarname}-%{version}
+%patch0 -p0
 
 %build
 %__python setup.py build
