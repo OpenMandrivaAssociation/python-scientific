@@ -14,7 +14,7 @@ Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	python-numpy, openmpi
 BuildRequires: 	netcdf-devel, python-numpy-devel, openmpi-devel
-Url: 		http://dirac.cnrs-orleans.fr/ScrewFit/ScientificPython/
+Url: 		http://dirac.cnrs-orleans.fr/ScientificPython/
 %py_requires -d
 
 %description
@@ -44,21 +44,32 @@ This package contain headers file associated with the %{name} package.
 
 %build
 %__python setup.py build
-pushd Src/MPI
-%__python compile.py
-popd
 
 %install
 %__rm -rf %{buildroot}
 %__python setup.py install --root=%{buildroot}
-%__install -m 755 Src/MPI/mpipython %{buildroot}%{_bindir}
+
+export PYTHONPATH=%{buildroot}%{py_sitedir}
+export PYINCLUDE=`pwd`/Include
+pushd Src/MPI
+cat compile.py | sed 's/-I/-I$PYINCLUDE -I/' > compile-new.py
+%__python compile-new.py
+
+%__install -m 755 mpipython %{buildroot}%{_bindir}
+
+cat <<EOF>impipython
+#!/bin/bash
+mpirun -np 2 `python -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)+'/Scientific/BSP/console.py'"` $*
+EOF
+
+popd
 
 %clean
 %__rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE README README.MPI README.BSP Doc/Reference Doc/BSP_Tutorial.pdf Examples/
+%doc LICENSE README README.MPI README.BSP Doc/CHANGELOG Doc/Reference Doc/BSP_Tutorial.pdf Examples/ Src/MPI/impipython
 %{py_platsitedir}/Scientific/*
 %{py_platsitedir}/*.egg-info
 %defattr(755,root,root)
