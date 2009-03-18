@@ -49,7 +49,7 @@ This package contain headers file associated with the %{name} package.
 %__rm -rf %{buildroot}
 %__python setup.py install --root=%{buildroot}
 
-export PYTHONPATH=%{buildroot}%{py_sitedir}
+export PYTHONPATH=%{buildroot}%{py_platsitedir}
 export PYINCLUDE=`pwd`/Include
 pushd Src/MPI
 cat compile.py | sed 's/-I/-I$PYINCLUDE -I/' > compile-new.py
