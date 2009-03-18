@@ -52,6 +52,9 @@ This package contain headers file associated with the %{name} package.
 export PYTHONPATH=%{buildroot}%{py_platsitedir}
 export PYINCLUDE=`pwd`/Include
 pushd Src/MPI
+%ifarch x86_64
+sed -i 's/lib\/python/lib64\/python/' compile.py
+%endif
 cat compile.py | sed 's/-I/-I$PYINCLUDE -I/' > compile-new.py
 %__python compile-new.py
 
