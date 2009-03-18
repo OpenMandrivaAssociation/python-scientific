@@ -13,7 +13,7 @@ License: 	CeCILL-C
 Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	python-numpy, openmpi
-BuildRequires: 	netcdf-devel, python-numpy-devel, openmpi-devel
+BuildRequires: 	netcdf-devel, python-numpy-devel, openmpi-devel, openmpi
 Url: 		http://dirac.cnrs-orleans.fr/ScientificPython/
 %py_requires -d
 
