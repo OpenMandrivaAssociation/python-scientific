@@ -1,7 +1,7 @@
 %define tarname	ScientificPython
 %define name   	python-scientific
 %define version 2.8
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: 	Various Python modules for scientific computing
 Name: 		%{name}
