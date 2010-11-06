@@ -1,7 +1,7 @@
 %define tarname	ScientificPython
 %define name   	python-scientific
 %define version 2.8
-%define release %mkrel 4
+%define release %mkrel 5
 
 Summary: 	Various Python modules for scientific computing
 Name: 		%{name}
@@ -14,8 +14,8 @@ Group: 		Development/Python
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	python-numpy, openmpi
 BuildRequires: 	netcdf-devel, python-numpy-devel, openmpi-devel, openmpi
+BuildRequires:	python-devel
 Url: 		http://dirac.cnrs-orleans.fr/ScientificPython/
-%py_requires -d
 
 %description
 ScientificPython is a collection of Python modules that are useful for
