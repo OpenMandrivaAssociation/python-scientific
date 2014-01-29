@@ -45,7 +45,7 @@ Requires:	pkgconfig(python)
 Requires:	%{name} = %{EVRD}
 
 %description devel
-This package contain headers file associated with the %{name} package.
+Headers file associated with the python-scientific package.
 
 %files devel
 %{_includedir}/python%{py_ver}/Scientific/
