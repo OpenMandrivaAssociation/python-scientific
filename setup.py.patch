@@ -1,6 +1,6 @@
---- setup.py.old	2009-03-19 17:22:06.000000000 -0400
-+++ setup.py	2009-03-19 17:29:08.000000000 -0400
-@@ -34,6 +34,7 @@
+--- setup.py.orig	2013-07-04 10:20:49.378991841 +0200
++++ setup.py	2013-07-04 10:28:03.242471793 +0200
+@@ -34,6 +34,7 @@ if "--numarray" in sys.argv:
      use_numpy = False
      sys.argv.remove("--numarray")
  
@@ -8,19 +8,16 @@
  if use_numeric:
      extra_compile_args.append("-DNUMERIC=1")
  elif use_numarray:
-@@ -44,8 +45,10 @@
-         arrayobject_h_include = [os.path.join(sys.prefix,
-                                  "Lib/site-packages/numpy/core/include")]
-     else:
-+        if sys.arch == 'x86_64':
-+            lib = "lib64"
-         arrayobject_h_include = [os.path.join(sys.prefix,
--                                "lib/python%s.%s/site-packages/numpy/core/include"
-+                                lib + "/python%s.%s/site-packages/numpy/core/include"
-                                 % sys.version_info [:2])]
- 
+@@ -46,6 +47,8 @@ else :
  math_libraries = []
-@@ -77,8 +80,8 @@
+ if sys.platform != 'win32':
+     math_libraries.append('m')
++else :
++    math_libraries.append('m')
+ 
+ #
+ # Locate netCDF library
+@@ -72,8 +75,8 @@ if netcdf_prefix is None:
          pass
  if netcdf_prefix is None:
      for netcdf_prefix in ['/usr/local', '/usr', '/sw']:
@@ -31,4 +28,3 @@
          if os.path.exists(os.path.join(netcdf_include, 'netcdf.h')):
              break
      else:
-
