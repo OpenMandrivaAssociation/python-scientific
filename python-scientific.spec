@@ -42,7 +42,7 @@ Passing Interface, message-based parallel programming), and to BSPlib
 Summary:	Various Python modules for scientific computing, header files
 Group:		Development/Python
 Requires:	pkgconfig(python)
-Requires:	%{name} = %{EVRD
+Requires:	%{name} = %{EVRD}
 
 %description devel
 This package contain headers file associated with the %{name} package.
