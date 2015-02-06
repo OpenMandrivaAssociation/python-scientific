@@ -3,7 +3,7 @@
 Summary:	Various Python modules for scientific computing
 Name:		python-scientific
 Version:	2.9.2
-Release:	1
+Release:	2
 License:	CeCILL-C
 Group:		Development/Python
 Url:		http://dirac.cnrs-orleans.fr/ScientificPython/
