@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   ScientificPython-2.9.2.tar.gz: 387b0ed5600b0f08301412745aab2da72e1459d7
+sources:
+  ScientificPython-2.9.3.tar.gz: e3115b1f6c76d33fd7a4e300ccd6332d145889fd

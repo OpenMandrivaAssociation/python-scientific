@@ -2,12 +2,12 @@
 
 Summary:	Various Python modules for scientific computing
 Name:		python-scientific
-Version:	2.9.2
-Release:	2
+Version:	2.9.3
+Release:	1
 License:	CeCILL-C
 Group:		Development/Python
 Url:		http://dirac.cnrs-orleans.fr/ScientificPython/
-Source0:	https://sourcesup.renater.fr/frs/download.php/4153/%{tarname}-%{version}.tar.gz
+Source0:	https://sourcesup.renater.fr/frs/download.php/4425/ScientificPython-%{version}.tar.gz
 Patch0:		setup.py.patch
 BuildRequires:	openmpi
 BuildRequires:	python-numpy-devel
@@ -85,5 +85,3 @@ mpirun -np 2 `python -c "from distutils.sysconfig import get_python_lib; print g
 EOF
 
 popd
-
-
