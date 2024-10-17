@@ -6,7 +6,7 @@ Version:	2.9.2
 Release:	2
 License:	CeCILL-C
 Group:		Development/Python
-Url:		http://dirac.cnrs-orleans.fr/ScientificPython/
+Url:		https://dirac.cnrs-orleans.fr/ScientificPython/
 Source0:	https://sourcesup.renater.fr/frs/download.php/4153/%{tarname}-%{version}.tar.gz
 Patch0:		setup.py.patch
 BuildRequires:	openmpi
